@@ -10,6 +10,7 @@
 -    logout
 
 -    A comment section, you must be logged in to comment
+-    NOTE: If you can't see the add comment link, Click on the drop down menu to add comment. 
 
 -    Host the project on heroku
 
