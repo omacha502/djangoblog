@@ -12,5 +12,5 @@ urlpatterns = [
          ArticleDeleteView.as_view(), name='article_delete'),
     path('new/', ArticleCreateView.as_view(), name='article_new'),
     path('', ArticleListView.as_view(), name='article_list'),
-    path('new_comment/', AddCommentView.as_view(), name='add_comment'),
+    path('post/<int:pk>/comment/', AddCommentView.as_view(), name='add_comment'),
 ]

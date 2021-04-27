@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from .models import Article, Comment
+from .forms import CommentForm
 
 
 class ArticleListView(LoginRequiredMixin, ListView):
@@ -47,9 +48,11 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
 
 class AddCommentView(LoginRequiredMixin, CreateView):
     model = Comment
+    form_class = CommentForm
     template_name = 'add_comment.html'
-    fields = ('article', 'comment')
+    success_url = reverse_lazy('article_list')
+    # fields = '__all__'
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.post_id = self.kwargs['pk']
         return super().form_valid(form)
