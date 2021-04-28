@@ -21,8 +21,7 @@
                 {{ comment.date_added }}
             </strong>
             <br/>
-            {{ comment.body }}
-            <br/><br/>
+            {{ comment.body | linebreaks}}
         {% endfor %}
     {% endif %}
 {% endblock content %}
