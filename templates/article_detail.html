@@ -14,12 +14,12 @@
     {% if not article.comments.all %}
         No Comments Yet...<a href="{% url 'add_comment' article.pk %}">Add Comment</a>
     {% else %}
-        <h2>{{ article.comments.count }} Comments</h2><br/>
+        <u><h2>{{ article.comments.count }} Comments</h2></u><br/>
         {% for comment in article.comments.all %}
-            <strong>
+            <strong style="color:green">
                 {{ comment.name }} -
-                {{ comment.date_added }}
             </strong>
+                {{ comment.date_added }}
             <br/>
             {{ comment.body | linebreaks}}
         {% endfor %}

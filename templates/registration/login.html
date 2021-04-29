@@ -10,5 +10,7 @@
     <button class="btn btn-primary ml-2" type="submit">
         <a style="color:white" href="{% url 'password_reset' %}">Reset Password</a>
     </button>
+    <br/>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Signup</a></p>
 </form>
 {% endblock content %}
