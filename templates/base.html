@@ -11,8 +11,8 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">WELCOME TO MY FIRST DJANGO BLOG</a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand" href="{% url 'home' %}">WELCOME TO MY FIRST DJANGO BLOG
+        </a>
             {% if user.is_authenticated %}
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -37,7 +37,6 @@
                     </li>
                 </ul>
             {% endif %}
-        </div>
     </nav>
     <main>
         <div class="container">
